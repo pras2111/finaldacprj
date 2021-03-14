@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+
+<!-- Bootstrap core CSS -->
+<link href="/css/bootstrap.min.css" rel="stylesheet" />
+
+<link href="/css/non-responsive.css" rel="stylesheet" />
+
+<link href="/css/font-awesome.min.css" rel="stylesheet" />
+
+<!-- Custom styles for this template -->
+<link href="/css/style.css" rel="stylesheet" />
+
+<style>
+	table {
+	border-collapse: collapse;
+	}
+	
+	table, th, td {
+	border:1px solid black;}
+</style>
+</head>
+<body>
+<p>Dear <span th:text="${user.firstName}"></span>,</p>
+<br/>
+<p>SomeBody's Interested In Purchasing your Book ....!!!!!</p>
+<p>Your book details: <strong>#<span th:text="${order.id}"></span></strong></p>
+<h2>Order Detail for purchase #<span th:text="${order.id}"></span></h2>
+<hr/>
+
+<table>
+	<tr>
+		<td>
+			<span th:text="${}"></span><br/>
+			<span th:text="${}"></span><br/>
+			<span th:text="${}"></span><br/>
+			<span th:text="${}"></span><br/>
+			<span th:text="${}"></span><br/>
+		</td>
+		<td>
+			<span th:text="${}"></span><br/>
+			<span th:text="${}"></span><br/>
+			<span th:text="${}"></span><br/>
+			<span th:text="${}"></span><br/>
+			<span th:text="${}"></span><br/>
+		</td>
+		<td>
+			<span th:text="${}"></span><br/>
+			<span th:text="${}"></span><br/>
+			<span th:text="${}"></span><br/>
+			<span th:text="${}"></span><br/>
+			<span th:text="${}"></span><br/>
+		</td>
+	</tr>
+</table>
+
+<h3><strong>Interested In Book</strong></h3>
+<table>
+<thead>
+	<tr>
+		<td><strong>Item Name</strong></td> 
+	</tr>
+</thead>
+<tbody>
+	<tr th:each="cartItem : ${cartItemList}">
+		<td><span data-th-text="${cartItem.book.title}"></span></td> 
+	</tr>   
+</tbody>
+</table>
+
+<br/>
+<p>Best,</p>
+<p>ShareBuddy</p>
+ 
+</body>
+</html>
